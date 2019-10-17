@@ -1,5 +1,5 @@
 from route_helper import simple_route
-
+from flask import render_template
 GAME_HEADER = """
 <h1>Welcome to adventure quest!</h1>
 <p>At any time you can <a href='/reset/'>reset</a> your game.</p>
@@ -66,3 +66,9 @@ def save_name(world: dict, monsters_name: str) -> str:
     <br><br>
     <a href='/'>Return to the start</a>
     """.format(where=world['location'], monster_name=world['name'])
+
+
+
+@simple_route("/main")
+def test(world:dict):
+    return render_template('main.html')

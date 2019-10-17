@@ -8,8 +8,7 @@ would like to be able to reset their game.
 
 import json
 from functools import wraps
-
-from flask import request, session, redirect
+from flask import request, session, redirect,render_template
 
 from app import app
 
