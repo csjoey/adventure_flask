@@ -39,7 +39,6 @@ def simple_route(path: str, **options):
         return decorated_function
     return decorator
 
-
 @app.route("/reset/")
 def reset():
     """
@@ -48,5 +47,7 @@ def reset():
     :return: Redirection to '/'
     """
     session['world'] = "{}"
-    return redirect('/')
+    return redirect('/main')
+
+
 
