@@ -21,8 +21,8 @@ def render_index(world:dict):
 
 # MAIN GAME PAGE
 @simple_route("/main")
-def render_main(world:dict,action=None):
-    return render_template('main.html',game_content=generate_game(world))
+def render_main(world:dict,action=None,sub_action=None,arg=None):
+    return render_template('main.html',game_content=generate_game(world,action,sub_action,arg))
 
 # DEBUG PAGE
 @simple_route("/debug")
