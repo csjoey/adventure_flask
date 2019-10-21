@@ -14,6 +14,9 @@ from app import app
 
 INITIAL_WORLD = {
     'game_alive': True,
+    'purchases': [],
+    'money': 40,
+    'hydration': 100,
 }
 
 

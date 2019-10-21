@@ -25,7 +25,8 @@
     <div class="bg-light border-right" id="sidebar-wrapper">
       <div class="sidebar-heading">FijiQuest </div>
       <div class="list-group list-group-flush">
-          <a href="?action=inventory" class="list-group-item list-group-item-action bg-light">Inventory</a>
+          <a href="?action=home" class="list-group-item list-group-item-action bg-light">Go Home</a>
+          <a href="?action=purchases" class="list-group-item list-group-item-action bg-light">FijiCount</a>
           <a href="?action=shop" class="list-group-item list-group-item-action bg-light">Shop</a>
           <a href="?action=work" class="list-group-item list-group-item-action bg-light">Goto Work</a>
           <a href="/" class="list-group-item list-group-item-action bg-light">Exit Game</a>
@@ -59,7 +60,7 @@
 
 
       <div class="container-fluid">
-        {{ game_content }}
+        {{ game_content|safe}}
       </div>
     </div>
     <!-- /#page-content-wrapper -->

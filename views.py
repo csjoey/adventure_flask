@@ -14,7 +14,7 @@ def render_index(world:dict):
 
     return render_template('index.html',
                            game_alive=game_alive,
-                           CONST_GAME_SUMMARY=constants.CONST_HOW_TO_PLAY,
+                           CONST_GAME_SUMMARY=constants.CONST_GAME_SUMMARY,
                            CONST_HOW_TO_PLAY=constants.CONST_HOW_TO_PLAY,
                            CONST_GITHUB_LINK=constants.CONST_GITHUB_LINK
                            )
