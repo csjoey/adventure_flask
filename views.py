@@ -22,7 +22,7 @@ def render_index(world:dict):
 # MAIN GAME PAGE
 @simple_route("/main")
 def render_main(world:dict,action=None):
-    
+
     return render_template('main.html')
 
 # DEBUG PAGE
