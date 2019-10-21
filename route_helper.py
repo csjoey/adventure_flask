@@ -1,18 +1,20 @@
 """
 The simple_route decorator allows us to quickly make routes that have proper
 state being passed in and manipulated.
-
 This file also establishes the reset route, with the idea that everyone
 would like to be able to reset their game.
 """
 
 import json
 from functools import wraps
-from flask import request, session, redirect,render_template
+
+from flask import request, session, redirect
 
 from app import app
 
-INITIAL_WORLD = {"debug" : []}
+INITIAL_WORLD = {
+    'game_alive': True,
+}
 
 
 def simple_route(path: str, **options):
@@ -21,7 +23,6 @@ def simple_route(path: str, **options):
     the View endpoint to pass in the current `world` (deserialized from session data
     upon function entrance and serialized back into session once the function is
     done), any URL parameters, and then any request parameters (sorted by key name).
-
     :param path: The URL endpoint to use
     :type path: str
     :param options: Options to pass along to Flask's app.route. Usually you can ignore this.
@@ -39,9 +40,13 @@ def simple_route(path: str, **options):
         return decorated_function
     return decorator
 
-@simple_route("/reset")
-def reset(world):
-    world = INITIAL_WORLD
-    return redirect("/main")
 
-
+@app.route("/reset")
+def reset():
+    """
+    Resets the game's world state (stored in session) and redirects to
+    the root page.
+    :return: Redirection to '/'
+    """
+    session['world'] = json.dumps(INITIAL_WORLD)
+    return redirect('/main')
