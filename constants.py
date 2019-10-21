@@ -8,5 +8,7 @@ CONST_HOW_TO_PLAY: str = "Start the game using the button in the upper left corn
 
 CONST_GITHUB_LINK: str = 'https://github.com/csjoey/adventure_flask'
 
+CONST_DEBUG_HEADER: str = '<html> <h1>CURRENT WORLD VARIABLES</h1><br/>'
+
 
 

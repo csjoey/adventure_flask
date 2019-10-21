@@ -12,7 +12,7 @@ from flask import request, session, redirect,render_template
 
 from app import app
 
-INITIAL_WORLD = {}
+INITIAL_WORLD = {"debug" : []}
 
 
 def simple_route(path: str, **options):
@@ -39,15 +39,9 @@ def simple_route(path: str, **options):
         return decorated_function
     return decorator
 
-@app.route("/reset/")
-def reset():
-    """
-    Resets the game's world state (stored in session) and redirects to
-    the root page.
-    :return: Redirection to '/'
-    """
-    session['world'] = "{}"
-    return redirect('/main')
-
+@simple_route("/reset")
+def reset(world):
+    world = INITIAL_WORLD
+    return redirect("/main")
 
 
