@@ -43,7 +43,7 @@ def generate_game(world,action,sub_action,arg):
             if arg == 3:
                 world['ounces_available'] += 200
                 world['money'] -= 25
-                
+
             world['purchases'].append(arg)
 
         game_content = render_shop(world, sub_action, arg)
