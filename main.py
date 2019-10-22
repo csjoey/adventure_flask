@@ -1,4 +1,4 @@
-import constants
+import constants,random
 
 def generate_game(world,action,sub_action,arg):
 
@@ -49,7 +49,18 @@ def generate_game(world,action,sub_action,arg):
         game_content = render_shop(world, sub_action, arg)
 
     if action == 'work':
-        world['hydration'] -= 15
+        if arg == "solve":
+            buffer = arg
+            arg = sub_action
+            sub_action = buffer
+            print(action,sub_action,arg)
+            try:
+                if eval(world['math_challenge']) == int(arg):
+                    world['money'] += 2
+            except:
+                pass
+        world['hydration'] -= 15 if action != "solve" else 5
+        world['math_challenge'] = generate_challenge()
         game_content = render_work(world, sub_action, arg)
 
     return game_content
@@ -73,6 +84,7 @@ def render_shop(world,sub_action,arg):
 
 def render_work(world,sub_action,arg):
     body = ""
+    body += constants.FORMATSTR_WORK.format(world['math_challenge'])
     body += constants.FORMATSTR_FIJISTATS.format(world['hydration'], world['money'], world['ounces_available'])
     body += constants.HTMLSTR_DRINKBUTTON.format("work")
     return body
@@ -103,5 +115,9 @@ def gen_purchases(inlist):
         html += '<img src=" {} ">'.format(constants.CONST_FIJI_IMG_LIST[item-1])
     return html
 
-
+def generate_challenge():
+    term1 = str(random.randint(5,15))
+    term2 = str(random.randint(3,15))
+    operator = ["+","-","*"][random.randint(0,2)]
+    return term1+operator+term2
 

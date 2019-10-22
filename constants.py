@@ -30,8 +30,9 @@ Ooops! you ran out of hydration! Please exit or reset your game.
 
 
 FORMATSTR_HOME = """
-<h4>You are relaxing in your home, watching some YouTube while enjoying some nice Fiji water.</h4>
-<br><br><br><br><br>
+<h4>You are relaxing in your home, watching some YouTube while enjoying some nice Fiji water.</h4><br/>
+<img src="https://media1.giphy.com/media/w85OYSOzXQaiVzZswl/giphy.gif" alt="giphy deleted my garfield image" width="80%" height="45%">
+<br><br><br>
 """
 
 FORMATSTR_PURCHASES = """
@@ -62,6 +63,19 @@ $25
 """
 
 FORMATSTR_WORK = """
+<img src="/static/img/dunkin_logo.png" width="50%" height="10%">
+<h4>Welcome to your job at Dunkin' Donuts.</h4><br>
+<h5>Note that drinking Fiji here is less efficient than at home</h5><br/>
+<h3>Solve math problems to run Dunkin's servers for $2 each</h3>
+<form method="get" action="/main">
+    <label for="arg">What is {}?</label>
+    <input type="hidden" name="action" value="work">
+    <input type="hidden" name="sub_action" value="solve">
+    <input autofocus type="text" name="arg" class="form-control" id="arg" placeholder="Enter Solution">
+    <br>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+<br/><br/>
 """
 
 FORMATSTR_FIJISTATS = """
