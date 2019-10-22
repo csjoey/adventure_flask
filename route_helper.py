@@ -15,8 +15,10 @@ from app import app
 INITIAL_WORLD = {
     'game_alive': True,
     'purchases': [],
+    'ounces_available': 8,
     'money': 40,
     'hydration': 100,
+    'math_challenge': "",
 }
 
 
