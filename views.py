@@ -1,7 +1,7 @@
 from route_helper import simple_route
-from flask import render_template
+from flask import render_template,session,request
 from main import generate_game
-import constants
+import constants,json
 
 
 # INDEX HOME PAGE
@@ -20,9 +20,18 @@ def render_index(world:dict):
                            )
 
 # MAIN GAME PAGE
-@simple_route("/main")
+@simple_route('/main')
 def render_main(world:dict,action=None,sub_action=None,arg=None):
-    return render_template('main.html',game_content=generate_game(world,action,sub_action,arg))
+    game_content = generate_game(world, action, sub_action, arg)
+    return render_template('main.html', game_content=game_content)
+
+# Citations Page
+@simple_route('/citations')
+def render_citations(world:dict):
+    return render_template('citations.html')
+
+
+
 
 # DEBUG PAGE
 @simple_route("/debug")
