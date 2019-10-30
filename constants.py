@@ -31,7 +31,7 @@ Ooops! you ran out of hydration! Please exit or reset your game.
 
 FORMATSTR_HOME = """
 <h4>You are relaxing in your home, watching some YouTube while enjoying some nice Fiji water.</h4><br/>
-<img src="https://media1.giphy.com/media/w85OYSOzXQaiVzZswl/giphy.gif" alt="giphy deleted my garfield image" width="80%" height="45%">
+<img src="https://media1.giphy.com/media/w85OYSOzXQaiVzZswl/giphy.gif" alt="giphy deleted my garfield image" width="25%" height="12.5%">
 <br><br><br>
 """
 
