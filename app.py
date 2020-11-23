@@ -2,7 +2,7 @@ from flask import Flask
 
 app = Flask(__name__)
 
-app.secret_key = "cisc108honors"
+app.secret_key = ***
 
 # Dr. Bart added this: It imports my views
 import views
